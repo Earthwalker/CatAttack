@@ -5,7 +5,6 @@
 *.suo
 *.user
 *.sln.docstates
-*.meta
 
 # Build results
 [Dd]ebug/
@@ -34,7 +33,6 @@ TestResult.xml
 [Dd]ebugPS/
 [Rr]eleasePS/
 dlldata.c
-
 *_i.c
 *_p.c
 *_i.h
@@ -70,7 +68,6 @@ ipch/
 *.opensdf
 *.sdf
 *.cachefile
-
 # Visual Studio profiler
 *.psess
 *.vsp
@@ -126,8 +123,10 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-# TODO: Comment the next line if you want to checkin your web deploy settings 
+
+# TODO: Comment the next line if you want to checkin your web deploy settings
 # but database connection strings (with potential passwords) will be unencrypted
+
 *.pubxml
 *.publishproj
 
@@ -182,3 +181,6 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+# Unity specific
+[Ll]ibrary/
