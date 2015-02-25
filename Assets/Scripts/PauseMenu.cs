@@ -21,11 +21,6 @@ public class PauseMenu : MonoBehaviour
 	public delegate void PauseHandler(Component menu);
 
 	/// <summary>
-	/// Stores the lock state of the cursor
-	/// </summary>
-	bool cursorLocked;
-
-	/// <summary>
 	/// Pauses the game
 	/// </summary>
 	public void Pause()
@@ -36,9 +31,6 @@ public class PauseMenu : MonoBehaviour
 
 		// show the canvas
 		GetComponent<Canvas>().enabled = true;
-
-		// save the lock state of the cursor so we can restore it when we resume the game
-		cursorLocked = Screen.lockCursor;
 
 		// make sure the cursor is unlocked so we can interact with the menu
         Screen.lockCursor = false;
@@ -62,8 +54,8 @@ public class PauseMenu : MonoBehaviour
 		// hide the canvas
 		GetComponent<Canvas>().enabled = false;
 
-		// set the lock state of the cursor to what is was when we paused
-		Screen.lockCursor = cursorLocked;
+		// lock the cursor once more
+		Screen.lockCursor = true; //TODO: restore the lock state of the cursor before we paused
 
 		// raise our resumed event
 		if (OnResume != null)
@@ -89,7 +81,7 @@ public class PauseMenu : MonoBehaviour
 	/// <returns></returns>
 	public bool IsPaused()
 	{
-		return enabled && GetComponent<Canvas>().enabled;
+		return !enabled || GetComponent<Canvas>().enabled;
     }
 
 	/// <summary>

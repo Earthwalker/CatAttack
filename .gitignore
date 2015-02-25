@@ -184,3 +184,4 @@ FakesAssemblies/
 # Unity specific
 [Ll]ibrary/
 [Tt]emp/
+/Assets/*/.svn/

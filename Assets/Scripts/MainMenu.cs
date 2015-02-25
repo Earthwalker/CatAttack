@@ -34,6 +34,8 @@ public class MainMenu : MonoBehaviour
 		// lock the cursor
 		Screen.lockCursor = true;
 
+		Debug.Log(Screen.lockCursor.ToString());
+
 		// hide the menu
 		GetComponent<Canvas>().enabled = false;
 
